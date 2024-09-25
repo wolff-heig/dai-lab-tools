@@ -55,15 +55,31 @@ We've provided a custom docker image `heigvddai/chucknorris` that you can use fo
 **Go to Docker hub and search for this image.**
 
 Using this image, **you must read** the section "Working with containers" of the document "The Top 10 Docker commands" on Cyberlearn. You should:
-- run the image `heigvddai/chucknorris`,
-- run the image as background process,
-- run the image, which uses TCP port 80 and map it to another port, for example 8080 (you can then open a browser and connect to `localhost:8080` to see a Chuck Norris joke and refresh the page several times),
-- open a shell in the running container,
-- list the running containers with `docker ps`,
-- stop the running container,
-- remove the downloaded image.
+1. run the image `heigvddai/chucknorris`,
+2. run the image as background process,
+3. run the image, which uses TCP port 80 and map it to another port, for example 8080 (you can then open a browser and connect to `localhost:8080` to see a Chuck Norris joke and refresh the page several times),
+4. open a shell in the running container,
+5. list the running containers with `docker ps`,
+6. stop the running container,
+7. remove the downloaded image.
 
 **Write down the commands you used for each of these steps.**
+
+---
+
+**Jérémy Wolff - Commands I used :**
+
+1. `docker run heigvddai/chucknorris`
+2. `docker run -d heigvddai/chucknorris`
+3. `docker run -d -p 8080:80 heigvddai/chucknorris`
+4. `docker exec -it 97 /bin/bash # 97 are the first digits of the ID of the running container`
+5. `docker ps`
+6. `docker stop 97 # 97 are the first digits of the ID of the running container`
+7. `docker rmi 075cab37437a # 075cab37437a is the IMAGE ID`
+
+Please note that you must first delete the container using the image before you can delete it with the above command (7.).
+
+---
 
 #### Port mapping
 
